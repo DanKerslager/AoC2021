@@ -20,7 +20,7 @@ paper = fold(paper,27,2);
 paper = fold(paper,13,2);
 paper = fold(paper,6,2);
 
-sum(sum(paper))
+%sum(sum(paper))
 function [paper] = fold(paper,num,side)
 num=num+1;
     if side ==1
