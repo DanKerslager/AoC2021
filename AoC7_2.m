@@ -18,3 +18,4 @@ for i = 1:length(crabs)
 end
 fueltot1
 fueltot2
+%use lower value
