@@ -1000,17 +1000,9 @@ X = [111100101100
 001010011011
 110000110111];
 
-X1=X;
-%for i = 1:12
-%    Y{13-i} = X-((round(X./10))*10);
-%    G{13-i} = median(Y{13-i})
-%    X = round(X./10);
-%end
-format long g 
-a = O2gen(X)
-b = CO2(X)
-bin2dec(string(b))
-bin2dec(string(a))
+a = O2gen(X);
+b = CO2(X);
+bin2dec(string(b))*bin2dec(string(a))
 
 function [X1] = CO2 (X)
     X1=X;
