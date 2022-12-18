@@ -24,29 +24,6 @@ for i = 2:size(Y,1)-1
         end
     end
 end
-%outpre = [0,0,0];
-%for i = 1:3
-%    [outpre(i),index] = max(basinsum);
-%    basinsum(index)= 0;
-%end
-%out = outpre(1)*outpre(2)*outpre(3)
 count
-function [basin] = neighborcheck (Y,i,j,basin)
-basin(i,j) = 2;
-while basin(i,j) ~=1
-    if Y(i,j)<Y(i+1,j) && basin(i+1,j)==0 && Y(i+1,j) ~= 9
-        basin = neighborcheck(Y,i+1,j,basin);
-    elseif Y(i,j)<Y(i,j+1) && basin(i,j+1)==0 && Y(i,j+1) ~= 9
-        basin = neighborcheck(Y,i,j+1,basin);
-    elseif Y(i,j)<Y(i-1,j) && basin(i-1,j)==0 && Y(i-1,j) ~= 9
-        basin = neighborcheck(Y,i-1,j,basin);
-    elseif Y(i,j)<Y(i,j-1) && basin(i,j-1)==0 && Y(i,j-1) ~= 9
-        basin = neighborcheck(Y,i,j-1,basin);
-    else
-        basin(i,j) = 1;
-        basin(ismember(basin,2))= 0;
-    end
-end
-end
     
 
