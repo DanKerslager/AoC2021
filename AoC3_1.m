@@ -999,8 +999,7 @@ X = [111100101100
 000100000100
 001010011011
 110000110111];
-format long g 
-X1=X;
+
 out1=0;
 out2=0;
 for i = 1:12
@@ -1020,47 +1019,3 @@ end
 out1=bin2dec(string(out1));
 out2=bin2dec(string(out2));
 out1*out2
-%a = O2gen(X);
-%b = CO2(X);
-%bin2dec(string(b))
-%bin2dec(string(a))
-
-function [X1] = CO2 (X)
-    X1=X;
-    for n = 1:12
-        i=1;
-        y = round(X/10^(12-n));
-        G = ceil(median(y));
-        if (mod(mean(y),1)~=[0,1])
-            while i<(length(X)+1)
-                if y(i) == G
-                    X(i) = [];
-                    X1(i) = [];
-                    y(i) = [];
-                    i=i-1;
-                end
-                i=i+1;
-            end
-        end
-        X=X-((1-G)*(1-G)).*y.*10^(12-n);
-    end
-end
-
-function [X1] = O2gen (X)
-    X1=X;
-    for n = 1:12
-        i=1;
-        y = round(X/10^(12-n));
-        G = ceil(median(y)); 
-        while i<(length(X)+1)
-            if y(i) ~= G
-                X(i) = [];
-                X1(i) = [];
-                y(i) = [];
-                i=i-1;
-            end
-            i=i+1;
-        end
-        X=X-G.*y.*10^(12-n);
-    end
-end
