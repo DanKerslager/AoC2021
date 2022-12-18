@@ -14,7 +14,7 @@ end
 out=0;
 blink=10:20;
 outarray=zeros(12,12);
-for step = 0:steps-1
+for step = 1:steps
     over=zeros(12,12);
     Y=Y+1;
     while sum(sum(ismember(Y,blink)))~=0
@@ -43,3 +43,4 @@ for step = 0:steps-1
         break
     end
 end
+steps
