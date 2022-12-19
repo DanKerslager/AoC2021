@@ -644,6 +644,7 @@ for i= 1:5
     end
 end
 out=winsum*winnum
+
 function [winboard] = winboardnum (X)
     for i=1:(size(X,3))
         board = X(:,:,i);
