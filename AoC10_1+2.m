@@ -19,7 +19,7 @@ for linenum = 1: size(X,3)
                 open(end) = [];
                 n=n-1;
             else
-                %out = out+3;
+                out = out+3;
                 break
             end
         elseif ismember(line(charnum),"]")
@@ -27,7 +27,7 @@ for linenum = 1: size(X,3)
                 open(end) = [];
                 n=n-1;
             else
-                %out = out+57;
+                out = out+57;
                 break
             end
         elseif ismember(line(charnum),"}")
@@ -35,7 +35,7 @@ for linenum = 1: size(X,3)
                 open(end) = [];
                 n=n-1;
             else
-                %out = out+1197;
+                out = out+1197;
                 break
             end
         elseif ismember(line(charnum),">")
@@ -43,7 +43,7 @@ for linenum = 1: size(X,3)
                 open(end) = [];
                 n=n-1;
             else
-                %out = out+25137;
+                out = out+25137;
                 break
             end
         end
@@ -67,3 +67,4 @@ for linenum = 1: size(X,3)
 end
 format long
 median(scoretable)
+out
